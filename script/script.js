@@ -10,3 +10,8 @@ async function prediction(){
     const response2 = await fetch(url2);
     const response3 = await fetch(url3);
     const response4 = await fetch(url4);
+    //intitializing data as variables and using the urls inside these data
+    var data1 = await response1.json();
+    var data2 = await response2.json();
+    var data3 = await response3.json();
+    var data4 = await response4.json();

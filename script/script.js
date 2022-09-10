@@ -23,3 +23,16 @@ async function prediction(){
     //calling the image by id 
     document.getElementById("image").src = data4.message;
 }
+
+//calling the function loadImage
+window.onload = function() {
+    loadImage();
+}
+ 
+//
+async function loadImage(){
+    var url5="https://dog.ceo/api/breeds/image/random";
+    const response5 = await fetch(url5);
+    var data5 = await response5.json();
+    document.getElementById("image").src = data5.message;
+}

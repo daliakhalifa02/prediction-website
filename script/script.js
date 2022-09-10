@@ -15,3 +15,11 @@ async function prediction(){
     var data2 = await response2.json();
     var data3 = await response3.json();
     var data4 = await response4.json();
+    //calling the ids given to the paragraphs in the html file and the concatinated part is us choosing the info we need from the urls (gender/age/nationality)
+    //using innerHTML allows our data to appear on the screen for the user to see (it becomes external)
+    document.getElementById('demo1').innerHTML="Gender: "+data1.gender;
+    document.getElementById('demo2').innerHTML="Age: "+data2.age;       
+    document.getElementById('demo3').innerHTML="Nationality: "+data3.country.country_id;
+    //calling the image by id 
+    document.getElementById("image").src = data4.message;
+}

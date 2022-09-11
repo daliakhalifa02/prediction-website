@@ -18,8 +18,10 @@ async function prediction(){
     //calling the ids given to the paragraphs in the html file and the concatinated part is us choosing the info we need from the urls (gender/age/nationality)
     //using innerHTML allows our data to appear on the screen for the user to see (it becomes external)
     document.getElementById('demo1').innerHTML="Gender: "+data1.gender;
-    document.getElementById('demo2').innerHTML="Age: "+data2.age;       
-    document.getElementById('demo3').innerHTML="Nationality: "+data3.country.country_id;
+    document.getElementById('demo2').innerHTML="Age: "+data2.age;  
+    //diving into the array data3.country to get only the values of the country_id from it   
+    const values = data3.country.map(object => object.country_id)
+    document.getElementById('demo3').innerHTML="Nationality: "+ values;
     //calling the image by id 
     document.getElementById("image").src = data4.message;
 }
@@ -29,7 +31,7 @@ window.onload = function() {
     loadImage();
 }
  
-//
+//calling the image by id to give it the value of the url of the random photos 
 async function loadImage(){
     var url5="https://dog.ceo/api/breeds/image/random";
     const response5 = await fetch(url5);
